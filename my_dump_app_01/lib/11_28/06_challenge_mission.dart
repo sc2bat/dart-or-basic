@@ -43,15 +43,7 @@ void main() {
       chkClap += 1;
       answer = "clap";
       // log.info("clap");
-      if (playerNum == 0) {
-        playerClap[0] += 1;
-      } else if (playerNum == 1) {
-        playerClap[1] += 1;
-      } else if (playerNum == 2) {
-        playerClap[2] += 1;
-      } else {
-        playerClap[3] += 1;
-      }
+      playerClap[playerNum] += 1;
     } else if (i % 10 == 0) {
       chkRool += 1;
       answer = "rool";
