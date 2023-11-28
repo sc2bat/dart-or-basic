@@ -32,7 +32,7 @@ void main() {
   for (i; i <= 100; i++) {
     // log.info(player[(i - 1) % 4]);
 
-    var playerNum = player[(i - 1) % 4];
+    var playerNum = (i - 1) % 4;
     var answer = "";
 
     if (i % 30 == 0) {
@@ -43,11 +43,11 @@ void main() {
       chkClap += 1;
       answer = "clap";
       // log.info("clap");
-      if ((i - 1) % 4 == 0) {
+      if (playerNum == 0) {
         playerClap[0] += 1;
-      } else if ((i - 1) % 4 == 1) {
+      } else if (playerNum == 1) {
         playerClap[1] += 1;
-      } else if ((i - 1) % 4 == 2) {
+      } else if (playerNum == 2) {
         playerClap[2] += 1;
       } else {
         playerClap[3] += 1;
@@ -61,7 +61,7 @@ void main() {
       // log.info("$i");
     }
 
-    log.info("$playerNum => $answer");
+    log.info("${player[playerNum]} => $answer");
   }
 
   var mostClap = 0;
@@ -86,7 +86,7 @@ void main() {
 
   log.info("가장많이 clap을 한 플레이어 ${player[mostClap]}");
 
-  log.info("test");
+  // log.info("test");
 }
 
 /**
