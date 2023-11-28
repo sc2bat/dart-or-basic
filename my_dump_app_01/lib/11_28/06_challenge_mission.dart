@@ -19,6 +19,7 @@ void main() {
   int chkAhh = 0;
   int chkClap = 0;
   int chkRool = 0;
+
   List<String> player = [
     "player1",
     "player2",
@@ -26,11 +27,13 @@ void main() {
     "player4",
   ];
 
+  List<int> playerClap = [0, 0, 0, 0];
+
   for (i; i <= 100; i++) {
     // log.info(player[(i - 1) % 4]);
 
     var playerNum = player[(i - 1) % 4];
-    var answer = i.toString();
+    var answer = "";
 
     if (i % 30 == 0) {
       chkAhh += 1;
@@ -40,21 +43,60 @@ void main() {
       chkClap += 1;
       answer = "clap";
       // log.info("clap");
+      if ((i - 1) % 4 == 0) {
+        playerClap[0] += 1;
+      } else if ((i - 1) % 4 == 1) {
+        playerClap[1] += 1;
+      } else if ((i - 1) % 4 == 2) {
+        playerClap[2] += 1;
+      } else {
+        playerClap[3] += 1;
+      }
     } else if (i % 10 == 0) {
       chkRool += 1;
       answer = "rool";
       // log.info("rool");
     } else {
+      answer = i.toString();
       // log.info("$i");
     }
 
     log.info("$playerNum => $answer");
   }
 
+  var mostClap = 0;
+  for (int j = 0; j < playerClap.length - 1; j++) {
+    if (playerClap[j] > playerClap[j + 1]) {
+      mostClap = j;
+    } else if (playerClap[j] < playerClap[j + 1]) {
+      mostClap = j + 1;
+    } else {
+      mostClap = j;
+    }
+  }
+
   log.info("clap의 총 갯수 $chkClap");
   log.info("rool의 총 갯수 $chkRool");
   log.info("ahh의 총 갯수 $chkAhh");
-  log.info("가장많이 clap을 한 플레이어 $chkAhh");
 
-  // log.info();
+  log.info("플레이어 1의 총 clap 갯수 ${playerClap[0]}");
+  log.info("플레이어 2의 총 clap 갯수 ${playerClap[1]}");
+  log.info("플레이어 3의 총 clap 갯수 ${playerClap[2]}");
+  log.info("플레이어 4의 총 clap 갯수 ${playerClap[3]}");
+
+  log.info("가장많이 clap을 한 플레이어 ${player[mostClap]}");
+
+  log.info("test");
 }
+
+/**
+ * 👻 INFO 2023-11-28 16:35:11.770 [caller info not available] clap의 총 갯수 30
+👻 INFO 2023-11-28 16:35:11.770 [caller info not available] rool의 총 갯수 7
+👻 INFO 2023-11-28 16:35:11.770 [caller info not available] ahh의 총 갯수 3
+👻 INFO 2023-11-28 16:35:11.771 [caller info not available] 플레이어 1의 총 clap 갯수 8
+👻 INFO 2023-11-28 16:35:11.771 [caller info not available] 플레이어 2의 총 clap 갯수 6
+👻 INFO 2023-11-28 16:35:11.771 [caller info not available] 플레이어 3의 총 clap 갯수 9
+👻 INFO 2023-11-28 16:35:11.771 [caller info not available] 플레이어 4의 총 clap 갯수 7
+👻 INFO 2023-11-28 16:35:11.771 [caller info not available] 가장많이 clap을 한 플레이어 player3
+ * 
+ */
