@@ -23,6 +23,7 @@ class WarMachine extends IronMan {
   WarMachine(String name, int powerlevel, this.armorType)
       : super(name, powerlevel);
 
+  @override
   void shoot() {
     log.info("WarMachine $name $powerlevel shoot");
   }
