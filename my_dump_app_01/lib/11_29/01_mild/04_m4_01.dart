@@ -2,6 +2,7 @@ import 'package:simple_logger/simple_logger.dart';
 
 final log = SimpleLogger();
 
+// ignore: slash_for_doc_comments
 /**
  * 
 M4. 등차수열 예제 생성기 만들어 보기
@@ -21,7 +22,6 @@ M4. 등차수열 예제 생성기 만들어 보기
  */
 
 void main() {
-  // log.info('hello world');
   int first = 5;
   int goncha = 10;
 

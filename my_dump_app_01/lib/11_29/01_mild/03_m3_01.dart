@@ -1,3 +1,5 @@
+// ignore_for_file: slash_for_doc_comments
+
 import 'package:simple_logger/simple_logger.dart';
 
 final log = SimpleLogger();
@@ -17,12 +19,7 @@ void main() {
   // log.info('hello world');
 
   String strResult = '';
-  List<String> qwer = [
-    '모두연1',
-    '010',
-    '1234',
-    '5678',
-  ];
+  List<String> qwer = ['모두연1', '010', '1234', '5678'];
 
   for (int i = 0; i < qwer.length; i++) {
     strResult += qwer[i];
