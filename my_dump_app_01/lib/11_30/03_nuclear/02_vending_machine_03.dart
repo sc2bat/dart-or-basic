@@ -36,49 +36,52 @@ final log = SimpleLogger();
  */
 
 void main() {
-  log.info('hello world');
+  log.info('===== 자판기 시작 =====');
+  log.info('');
 
   List<String> productList = ['chocolate', 'bbro', 'fanta', 'sprite'];
   List<int> pdCountList = [5, 5, 5, 5];
   List<int> pdValList = [500, 600, 1000, 1100];
 
-  bool money = true;
   int inputMoney = 5000;
 
-  log.info('===== 자판기 시작 =====');
   log.info('===== 자판기에 넣은 금액 $inputMoney =====');
-  log.info('===== ===== =====');
+  log.info('');
 
-  while (buyOne('sprite', inputMoney, productList, pdCountList, pdValList)) {
+  while (buyMultiple(
+      'sprite', 1, inputMoney, productList, pdCountList, pdValList)) {
     showVendingStatus(inputMoney, productList, pdCountList, pdValList);
+    log.info('');
   }
+
+  log.info('===== 자판기 종료 =====');
 }
 
-bool buyOne(String productName, int inputMoney, List<String> productList,
-    List<int> pdCountList, List<int> pdValList) {
+bool buyMultiple(String productName, int quantity, int inputMoney,
+    List<String> productList, List<int> pdCountList, List<int> pdValList) {
   bool result = true;
-  int pdIndex = 0;
+  int pdIndex = productList.indexOf(productName);
 
-  // for (int i = 0; i < productList.length; i++) {
-  //   if (productList[i] == productName) {
-  //     pdIndex = i;
-  //   }
-  // }
-  pdIndex = productList.indexOf(productName);
-  // log.info(pdIndex);
+  if (pdIndex == -1) {
+    log.info('===== 해당 물품을 찾을 수 없습니다 =====');
+    return false;
+  }
 
-  if (pdCountList[pdIndex] < 1) {
+  int totalCost = pdValList[pdIndex] * quantity;
+
+  if (pdCountList[pdIndex] < quantity) {
     log.info('===== 수량 부족 구매 실패 =====');
     return false;
-  } else if (inputMoney < pdValList[pdIndex]) {
+  } else if (inputMoney < totalCost) {
     log.info('===== 금액 부족 구매 실패 =====');
     return false;
   } else {
-    inputMoney -= pdValList[pdIndex];
-    pdCountList[pdIndex] -= 1;
-    log.info('===== 구매 성공 =====');
+    inputMoney -= totalCost;
+    pdCountList[pdIndex] -= quantity;
+
+    log.info('===== $productName $quantity개 구매 성공 =====');
     log.info(
-        '가격: ${pdValList[pdIndex]}원, 거스름돈: $inputMoney원, 남은 수량: ${pdCountList[pdIndex]}개');
+        '가격: $totalCost원, 거스름돈: $inputMoney원, 남은 수량: ${pdCountList[pdIndex]}개');
   }
 
   return result;

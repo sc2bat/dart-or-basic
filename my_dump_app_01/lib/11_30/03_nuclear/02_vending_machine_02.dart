@@ -36,13 +36,10 @@ final log = SimpleLogger();
  */
 
 void main() {
-  log.info('hello world');
-
   List<String> productList = ['chocolate', 'bbro', 'fanta', 'sprite'];
   List<int> pdCountList = [5, 5, 5, 5];
   List<int> pdValList = [500, 600, 1000, 1100];
 
-  bool money = true;
   int inputMoney = 5000;
 
   log.info('===== 자판기 시작 =====');
@@ -51,7 +48,9 @@ void main() {
 
   while (buyOne('sprite', inputMoney, productList, pdCountList, pdValList)) {
     showVendingStatus(inputMoney, productList, pdCountList, pdValList);
+    log.info(inputMoney);
   }
+  log.info('===== 자판기 종료 =====');
 }
 
 bool buyOne(String productName, int inputMoney, List<String> productList,
@@ -59,14 +58,11 @@ bool buyOne(String productName, int inputMoney, List<String> productList,
   bool result = true;
   int pdIndex = 0;
 
-  // for (int i = 0; i < productList.length; i++) {
-  //   if (productList[i] == productName) {
-  //     pdIndex = i;
-  //   }
-  // }
   pdIndex = productList.indexOf(productName);
-  // log.info(pdIndex);
-
+  if (pdIndex == -1) {
+    log.info('===== 존재하지 않는 상품 =====');
+    return false;
+  }
   if (pdCountList[pdIndex] < 1) {
     log.info('===== 수량 부족 구매 실패 =====');
     return false;
