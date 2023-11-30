@@ -83,32 +83,35 @@ final log = SimpleLogger();
 
 void main() {
 // 입력 예1
-  // int construction_x = 20;
-  // int construction_y = 10;
+  // int constructionX = 20;
+  // int constructionY = 10;
   // int noisyVal = 10;
   // int treeNum = 3;
-  // List<int> locate_x = [25, 20, 70];
-  // List<int> locate_y = [10, 15, 70];
-  //   👻 INFO 2023-11-30 09:11:43.339 [caller info not available] silent
-// 👻 INFO 2023-11-30 09:11:43.340 [caller info not available] silent
-// 👻 INFO 2023-11-30 09:11:43.340 [caller info not available] noisy
+  // List<int> locateX = [25, 20, 70];
+  // List<int> locateY = [10, 15, 70];
+//   👻 INFO 2023-11-30 09:27:05.279 [caller info not available] noisy
+// 👻 INFO 2023-11-30 09:27:05.280 [caller info not available] noisy
+// 👻 INFO 2023-11-30 09:27:05.280 [caller info not available] silent
 
 // 입력 예2
-  int construction_x = 50;
-  int construction_y = 50;
+  int constructionX = 50;
+  int constructionY = 50;
   int noisyVal = 100;
   int treeNum = 4;
 
-  List<int> locate_x = [0, 0, 100, 100];
-  List<int> locate_y = [0, 100, 0, 100];
+  List<int> locateX = [0, 0, 100, 100];
+  List<int> locateY = [0, 100, 0, 100];
+  //4 👻 INFO 2023-11-30 09:27:19.091 [caller info not available] noisy
 
   for (int i = 0; i < treeNum; i++) {
-    if (pow((locate_x[i] - construction_x), 2).toInt() +
-            pow((locate_y[i] - construction_y), 2).toInt() >=
-        pow(noisyVal, 2).toInt()) {
-      log.info('noisy');
-    } else {
+    bool isSlient = pow((locateX[i] - constructionX), 2).toInt() +
+            pow((locateY[i] - constructionY), 2).toInt() >=
+        pow(noisyVal, 2).toInt();
+
+    if (isSlient) {
       log.info('silent');
+    } else {
+      log.info('noisy');
     }
   }
 }
