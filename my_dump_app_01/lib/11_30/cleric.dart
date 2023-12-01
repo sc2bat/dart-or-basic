@@ -57,9 +57,9 @@ class Cleric {
 
   int pray(int praySec) {
     var ranVal = Random().nextInt(3);
-    int prayHeal = praySec + praySec * ranVal;
-    log.info('$praySec 초 동안 기도를 하여 $prayHeal 만큼 체력을 회복합니다.');
-    return prayHeal;
+    int prayMp = praySec + praySec * ranVal;
+    log.info('$praySec 초 동안 기도를 하여 $prayMp 만큼 mp 을 회복합니다.');
+    return prayMp;
   }
 }
 
@@ -69,7 +69,10 @@ void main() {
 
   cleric1.selfAid();
   cleric1.getDamage();
-  cleric1.hp = cleric1.hp + cleric1.pray(5);
+  cleric1.mp += cleric1.pray(5);
+  if (cleric1.mp > cleric1.maxMp) {
+    cleric1.mp = cleric1.maxMp;
+  }
   cleric1.showInfo();
 }
 
