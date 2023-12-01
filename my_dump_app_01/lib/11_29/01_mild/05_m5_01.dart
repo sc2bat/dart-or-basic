@@ -2,6 +2,7 @@ import 'package:simple_logger/simple_logger.dart';
 
 final log = SimpleLogger();
 
+// ignore: slash_for_doc_comments
 /**
  * M5. 부족한 카드 찾기
 당신은 1, 2, 3, 4, 5의 숫자가 적힌 5 종류의 카드를 모으고 있습니다.
