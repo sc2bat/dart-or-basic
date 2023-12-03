@@ -28,7 +28,6 @@ class Cleric1201_02 {
   int mp;
 
   /// 2-C 이름만을 지정하여 인스턴스화 가능
-
   Cleric1201_02(
     this.name, {
     this.hp = maxHp,

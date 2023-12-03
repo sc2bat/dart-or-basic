@@ -1,0 +1,11 @@
+Skyscanner API:
+
+웹사이트: Skyscanner for Business
+Skyscanner는 항공, 호텔, 차량 예약에 관한 API를 제공합니다. 간편한 예매 및 가격 비교 기능을 제공합니다.
+https://www.partners.skyscanner.net/
+
+FlightAware API:
+
+웹사이트: FlightAware API
+FlightAware는 실시간 비행 추적 및 항공편 정보를 제공하는 API를 제공합니다.
+https://flightaware.com/commercial/flightxml/
