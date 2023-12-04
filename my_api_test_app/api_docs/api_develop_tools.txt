@@ -1,0 +1,24 @@
+프레임워크: Flask (파이썬)
+
+'''
+python
+Copy code
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/api/hello', methods=['GET'])
+def hello():
+    return jsonify(message='Hello, World!')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+'''
+
+언어: Python
+
+API 문서화: Swagger 또는 Flask-RESTful
+
+ORM (Object-Relational Mapping): SQLAlchemy
+
+테스트 도구: Postman 또는 Insomnia
