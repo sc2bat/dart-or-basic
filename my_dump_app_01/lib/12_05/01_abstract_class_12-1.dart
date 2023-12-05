@@ -15,24 +15,19 @@ import 'package:my_dump_app_01/12_05/02_interface_practice_12-3.dart';
 abstract class Asset {
   String name;
   int price;
-  String color;
-  String isbn;
 
   Asset({
     required this.name,
     required this.price,
-    required this.color,
-    required this.isbn,
   });
 }
 
 // 무형자산(IntangibleAsset)
 abstract class IntangibleAsset extends Asset {
-  IntangibleAsset(
-      {required super.name,
-      required super.price,
-      required super.color,
-      required super.isbn});
+  IntangibleAsset({
+    required super.name,
+    required super.price,
+  });
 }
 
 // 유형자산(TangibleAsset)
@@ -43,13 +38,14 @@ abstract class IntangibleAsset extends Asset {
 abstract class TangibleAsset extends Asset implements Thing {
   final double _weight;
 
-  TangibleAsset(
-      {required super.name,
-      required super.price,
-      required super.color,
-      required super.isbn,
-      required double weight})
-      : _weight = weight;
+  String color;
+
+  TangibleAsset({
+    required super.name,
+    required super.price,
+    required this.color,
+    required double weight,
+  }) : _weight = weight;
 
   @override
   double get weight => _weight;
@@ -60,32 +56,37 @@ abstract class TangibleAsset extends Asset implements Thing {
 
 // 무형자산 특허권(Patent)
 class Patent extends IntangibleAsset {
+  String patentId;
+
   Patent({
     required super.name,
     required super.price,
-    required super.color,
-    required super.isbn,
+    required this.patentId,
   });
 }
 
 // 유형자산 책(Book)
 class Book extends TangibleAsset {
+  String isbn;
+
   Book({
     required super.name,
     required super.price,
     required super.color,
-    required super.isbn,
+    required this.isbn,
     required super.weight,
   });
 }
 
 // 유형자산 컴퓨터(Computer)
 class Computer extends TangibleAsset {
+  String makeName;
+
   Computer({
     required super.name,
     required super.price,
     required super.color,
-    required super.isbn,
+    required this.makeName,
     required super.weight,
   });
 }
