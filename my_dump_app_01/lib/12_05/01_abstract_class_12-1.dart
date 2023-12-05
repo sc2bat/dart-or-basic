@@ -38,10 +38,10 @@ abstract class IntangibleAsset extends Asset {
 // 유형자산(TangibleAsset)
 // 12-4
 // 유형자산 (TangibleAsset) 은, 자산 (Asset) 의 일종이며, 형태가 있는 것 (Thing) 의 일종이기도 하다.
-// 이 정의에 맞도록 TangibleAsset 의 소스 코드를 수정하시오.
-// 이 때, TangibleAsset 에 필드나 메소드의 추가가 필요하다면, 적당히 추가하시오.
+// 이 정의에 맞도록 TangibleAsset 의 소스 코드를 수정하시오.???
+// 이 때, TangibleAsset 에 필드나 메소드의 추가가 필요하다면, 적당히 추가하시오. ???
 abstract class TangibleAsset extends Asset implements Thing {
-  double _weight;
+  final double _weight;
 
   TangibleAsset(
       {required super.name,
@@ -68,18 +68,15 @@ class Patent extends IntangibleAsset {
   });
 }
 
-/**
 // 유형자산 책(Book)
 class Book extends TangibleAsset {
   Book({
     required super.name,
     required super.price,
     required super.color,
-    required super.isbn, required super.weight,
+    required super.isbn,
+    required super.weight,
   });
-
-  @override
-  double weight;
 }
 
 // 유형자산 컴퓨터(Computer)
@@ -89,10 +86,10 @@ class Computer extends TangibleAsset {
     required super.price,
     required super.color,
     required super.isbn,
+    required super.weight,
   });
-
-  @override
-  double weight;
 }
+
+/**
 
  */
