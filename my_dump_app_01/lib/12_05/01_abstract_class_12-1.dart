@@ -68,13 +68,14 @@ class Patent extends IntangibleAsset {
   });
 }
 
+/**
 // 유형자산 책(Book)
 class Book extends TangibleAsset {
   Book({
     required super.name,
     required super.price,
     required super.color,
-    required super.isbn,
+    required super.isbn, required super.weight,
   });
 
   @override
@@ -93,3 +94,5 @@ class Computer extends TangibleAsset {
   @override
   double weight;
 }
+
+ */
