@@ -1,0 +1,49 @@
+@startuml starcraft
+
+interface Race{}
+
+interface Zerg implements Race{
+    void autoHeal()
+}
+
+interface Movable{
+    void move()
+}
+
+interface Attackable{
+    get damage()
+    set damage()
+
+    void attack(Unit target)
+}
+
+abstract class Unit{
+    String name
+    int hp
+}
+
+abstract class ZergUnit extends Unit implements Zerg, Bionic{
+}
+
+abstract class ZergStructure extends Unit implements Zerg{
+}
+
+' interface
+interface Bionic{}
+
+' ==== Zerg ====
+class Drone extends ZergUnit implements Movable, Attackable{
+    void getMineral()
+}
+
+' ==== structure ====
+class Hatchery extends ZergStructure{
+}
+
+
+' ' ==== Protoss ====
+' class Protoss extends Unit{
+'     String race
+' }
+
+@enduml

@@ -1,0 +1,41 @@
+@startuml starcraft
+
+interface Race{}
+
+interface Protoss implements Race{
+    void autoRechargeShield()
+}
+
+interface Movable{
+    void move()
+}
+
+interface Attackable{
+    get damage()
+    set damage()
+
+    void attack(Unit target)
+}
+
+abstract class Unit{
+    String name
+    int hp
+}
+
+abstract class ProtossUnit extends Unit implements Protoss, Movable, Attackable{
+    int shieldPoint
+}
+
+abstract class ProtossStructure extends Unit implements Protoss{
+    int shieldPoint
+}
+
+interface Bionic{}
+interface Mechanic{}
+
+class Zealot extends ProtossUnit implements Bionic{}
+class Dragoon extends ProtossUnit implements Mechanic{}
+class Nexus extends ProtossStructure{}
+
+
+@enduml

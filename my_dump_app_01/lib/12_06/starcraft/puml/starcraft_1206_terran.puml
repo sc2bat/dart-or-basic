@@ -1,0 +1,65 @@
+@startuml starcraft
+
+interface Race{}
+
+interface Terran implements Race{}
+
+interface Movable{
+    void move()
+}
+
+interface Attackable{
+    get damage()
+    set damage()
+
+    void attack(Unit target)
+}
+
+abstract class Unit{
+    String name
+    int hp
+}
+
+abstract class TerranUnit extends Unit implements Terran{
+}
+
+' interface
+interface Bionic{}
+interface Mechanic{}
+
+
+' ==== Terran ====
+class SCV extends TerranUnit implements Bionic, Mechanic, Movable, Attackable{
+    void getMineral()
+    
+    void repair(Mechanic mechanic)
+}
+
+class Marine extends TerranUnit implements Bionic, Movable, Attackable {
+    void stimpack()
+}
+
+class Medic extends TerranUnit implements Bionic, Movable {
+    void heal(Bionic bionic)
+}
+
+class Vulture extends TerranUnit implements Mechanic, Movable, Attackable {
+    void deploySpiderMine()
+}
+
+class Tank extends TerranUnit implements Mechanic, Movable, Attackable {
+    void siegeMode()
+}
+
+
+' ' ==== Zerg ====
+' class Zerg extends Unit{
+'     String race
+' }
+
+' ' ==== Protoss ====
+' class Protoss extends Unit{
+'     String race
+' }
+
+@enduml

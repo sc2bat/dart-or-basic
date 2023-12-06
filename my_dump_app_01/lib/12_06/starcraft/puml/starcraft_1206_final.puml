@@ -1,0 +1,70 @@
+@startuml starcraft_final
+
+abstract class StartCraftObject{}
+
+abstract class Unit extends StartCraftObject implements Movable{}
+
+abstract class Structure extends StartCraftObject{}
+
+interface Race {}
+
+interface ZergRecovery {
+    autoHeal()
+}
+
+interface Bionic {}
+
+interface Mechanic {}
+
+interface Attackable {
+    set damage(int attackDamage)
+    get damage()
+
+    attack(StartCraftObject object)
+}
+
+interface Movable {}
+
+interface GatherResource {
+    gatherMineral()
+    gatherGas()
+}
+
+' Terran
+abstract class TerranUnit extends Unit implements Race{}
+
+abstract class TerranStructure extends Structure implements Race {}
+
+class SCV extends TerranUnit implements GatherResource, Attackable, Bionic, Mechanic {}
+
+class Marine extends TerranUnit implements Attackable, Bionic {}
+
+class Medic extends TerranUnit implements Bionic {}
+
+class Vulture extends TerranUnit implements Attackable, Mechanic {}
+
+class SeizeTank extends TerranUnit implements Attackable, Mechanic {}
+
+' Zerg
+abstract class ZergUnit extends Unit implements Race, ZergRecovery {}
+
+abstract class ZergStructure extends Structure implements Race, ZergRecovery {}
+
+class Drone extends ZergUnit implements GatherResource, Attackable, Bionic {}
+
+class Ultralisk extends ZergUnit implements Attackable, Bionic {}
+
+class Hatchery extends ZergStructure {}
+
+' Protoss
+abstract class ProtossUnit extends Unit implements Race, Shield {}
+
+abstract class ProtossStructure extends Structure implements Race, Shield {}
+
+class Probe extends ProtossUnit implements GatherResource, Attackable, Mechanic {}
+
+class Zealot extends ProtossUnit implements Attackable, Bionic {}
+
+class Dragoon extends ProtossUnit implements Attackable, Mechanic {}
+
+@enduml
