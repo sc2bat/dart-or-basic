@@ -36,7 +36,7 @@ abstract class IntangibleAsset extends Asset {
 // 이 정의에 맞도록 TangibleAsset 의 소스 코드를 수정하시오.???
 // 이 때, TangibleAsset 에 필드나 메소드의 추가가 필요하다면, 적당히 추가하시오. ???
 abstract class TangibleAsset extends Asset implements Thing {
-  final double _weight;
+  double _weight;
 
   String color;
 
@@ -51,7 +51,7 @@ abstract class TangibleAsset extends Asset implements Thing {
   double get weight => _weight;
 
   @override
-  set weight(weight) => weight;
+  set weight(double weightValue) => _weight = weightValue;
 }
 
 // 무형자산 특허권(Patent)

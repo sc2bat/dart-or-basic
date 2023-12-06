@@ -1,6 +1,9 @@
 class CharacterClass {
-  // String name;
-  // int hp;
+  String name;
+  int hp;
 
-  // CharacterClass({required this.name});
+  CharacterClass(
+    this.hp, {
+    required this.name,
+  });
 }
