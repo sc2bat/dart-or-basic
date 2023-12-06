@@ -40,4 +40,10 @@ class Drone extends ZergUnit implements GatherResource, Attackable, Bionic {
     log.info('Drone $name attack ${scObject.name}');
     log.info('${scObject.name} get $_attackDamage point damage');
   }
+
+  @override
+  void autoHeal(int hp) {
+    hp++;
+    log.info('auto hp++ every second');
+  }
 }
