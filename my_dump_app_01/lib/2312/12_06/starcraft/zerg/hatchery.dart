@@ -1,4 +1,4 @@
-import 'package:my_dump_app_01/12_06/starcraft/zerg/zerg.dart';
+import 'zerg.dart';
 
 class Hatchery extends ZergStructure {
   Hatchery({

@@ -1,6 +1,6 @@
-import 'package:my_dump_app_01/12_06/starcraft/interface/interfaces.dart';
-import 'package:my_dump_app_01/12_06/starcraft/object.dart';
-import 'package:my_dump_app_01/12_06/starcraft/protoss/protoss.dart';
+import '../interface/interfaces.dart';
+import '../object.dart';
+import 'protoss.dart';
 
 class Probe extends ProtossUnit
     implements GatherResource, Attackable, Mechanic {

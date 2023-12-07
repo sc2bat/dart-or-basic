@@ -1,4 +1,4 @@
-import 'package:my_dump_app_01/12_01/game/hero_1201.dart';
+import 'package:my_dump_app_01/2312/12_01/game/hero_1201.dart';
 
 class Wizard {
   String name;

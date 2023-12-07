@@ -1,6 +1,6 @@
-import 'package:my_dump_app_01/12_06/starcraft/interface/interfaces.dart';
-import 'package:my_dump_app_01/12_06/starcraft/object.dart';
-import 'package:my_dump_app_01/12_06/starcraft/zerg/zerg.dart';
+import '../interface/interfaces.dart';
+import '../object.dart';
+import 'zerg.dart';
 
 class Ultralisk extends ZergUnit implements Attackable, Bionic {
   int _attackDamage;

@@ -10,7 +10,8 @@
 // 이것을 전제로 다음의 상속도의 가, 나, 다 부분의 클래스명을 생각 해 보시오.
 
 // 가) 자산(Asset)
-import 'package:my_dump_app_01/12_05/02_interface_practice_12-3.dart';
+
+import '02_interface_practice_12-3.dart';
 
 abstract class Asset {
   String name;

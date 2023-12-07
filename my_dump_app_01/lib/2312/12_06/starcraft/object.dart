@@ -1,5 +1,6 @@
-import 'package:my_dump_app_01/12_06/starcraft/interface/interfaces.dart';
 import 'package:simple_logger/simple_logger.dart';
+
+import 'interface/interfaces.dart';
 
 abstract class StartCraftObject {
   final log = SimpleLogger();

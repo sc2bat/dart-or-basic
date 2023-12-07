@@ -1,7 +1,7 @@
 // 상속 (inheritance)
 
-import 'package:my_dump_app_01/12_05/00_inheritance.dart';
-import 'package:my_dump_app_01/12_05/hero1205.dart';
+import '00_inheritance.dart';
+import 'hero1205.dart';
 
 class SuperHero1205 extends Hero1205 {
   bool _isFlying = false;

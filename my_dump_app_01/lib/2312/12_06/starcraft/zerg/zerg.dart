@@ -1,5 +1,5 @@
-import 'package:my_dump_app_01/12_06/starcraft/interface/interfaces.dart';
-import 'package:my_dump_app_01/12_06/starcraft/object.dart';
+import '../interface/interfaces.dart';
+import '../object.dart';
 
 abstract class ZergUnit extends Unit implements Race, ZergRecovery {
   ZergUnit({

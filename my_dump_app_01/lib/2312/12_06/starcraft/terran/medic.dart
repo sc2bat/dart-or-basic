@@ -1,5 +1,5 @@
-import 'package:my_dump_app_01/12_06/starcraft/interface/interfaces.dart';
-import 'package:my_dump_app_01/12_06/starcraft/terran/terran.dart';
+import '../interface/interfaces.dart';
+import 'terran.dart';
 
 class Medic extends TerranUnit implements Bionic {
   Medic({

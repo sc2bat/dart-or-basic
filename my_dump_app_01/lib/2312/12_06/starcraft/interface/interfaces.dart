@@ -1,5 +1,6 @@
-import 'package:my_dump_app_01/12_06/starcraft/object.dart';
 import 'package:simple_logger/simple_logger.dart';
+
+import '../object.dart';
 
 final log = SimpleLogger();
 

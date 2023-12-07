@@ -10,7 +10,6 @@
 // d. 용사의 HP 의 1/5에 해당하는 포인트를 용사의 HP 로부터 감소시키고, “~포인트의 데미지" 라고 표시
 // e. “독 공격의 남은 횟수" 를 1 감소 시킨다
 
-import 'package:my_dump_app_01/12_05/hero1205.dart';
 import 'package:simple_logger/simple_logger.dart';
 
 final log = SimpleLogger();

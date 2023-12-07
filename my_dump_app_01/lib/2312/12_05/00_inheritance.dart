@@ -1,5 +1,5 @@
 // 상속 (inheritance)
-import 'package:my_dump_app_01/12_05/super_hero1205.dart';
+import 'package:my_dump_app_01/2312/12_05/super_hero1205.dart';
 import 'package:simple_logger/simple_logger.dart';
 
 import 'hero1205.dart';
