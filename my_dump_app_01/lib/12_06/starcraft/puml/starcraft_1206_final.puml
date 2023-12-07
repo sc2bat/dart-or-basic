@@ -29,42 +29,47 @@ interface GatherResource {
     gatherMineral()
     gatherGas()
 }
+package Terran{
+    ' Terran
+    abstract class TerranUnit extends Unit implements Race{}
 
-' Terran
-abstract class TerranUnit extends Unit implements Race{}
+    abstract class TerranStructure extends Structure implements Race {}
 
-abstract class TerranStructure extends Structure implements Race {}
+    class SCV extends TerranUnit implements GatherResource, Attackable, Bionic, Mechanic {}
 
-class SCV extends TerranUnit implements GatherResource, Attackable, Bionic, Mechanic {}
+    class Marine extends TerranUnit implements Attackable, Bionic {}
 
-class Marine extends TerranUnit implements Attackable, Bionic {}
+    class Medic extends TerranUnit implements Bionic {}
 
-class Medic extends TerranUnit implements Bionic {}
+    class Vulture extends TerranUnit implements Attackable, Mechanic {}
 
-class Vulture extends TerranUnit implements Attackable, Mechanic {}
+    class SeizeTank extends TerranUnit implements Attackable, Mechanic {}
+}
 
-class SeizeTank extends TerranUnit implements Attackable, Mechanic {}
+package Zerg{
+    ' Zerg
+    abstract class ZergUnit extends Unit implements Race, ZergRecovery {}
 
-' Zerg
-abstract class ZergUnit extends Unit implements Race, ZergRecovery {}
+    abstract class ZergStructure extends Structure implements Race, ZergRecovery {}
 
-abstract class ZergStructure extends Structure implements Race, ZergRecovery {}
+    class Drone extends ZergUnit implements GatherResource, Attackable, Bionic {}
 
-class Drone extends ZergUnit implements GatherResource, Attackable, Bionic {}
+    class Ultralisk extends ZergUnit implements Attackable, Bionic {}
 
-class Ultralisk extends ZergUnit implements Attackable, Bionic {}
+    class Hatchery extends ZergStructure {}
+}
 
-class Hatchery extends ZergStructure {}
+package Protoss{
+    ' Protoss
+    abstract class ProtossUnit extends Unit implements Race, Shield {}
 
-' Protoss
-abstract class ProtossUnit extends Unit implements Race, Shield {}
+    abstract class ProtossStructure extends Structure implements Race, Shield {}
 
-abstract class ProtossStructure extends Structure implements Race, Shield {}
+    class Probe extends ProtossUnit implements GatherResource, Attackable, Mechanic {}
 
-class Probe extends ProtossUnit implements GatherResource, Attackable, Mechanic {}
+    class Zealot extends ProtossUnit implements Attackable, Bionic {}
 
-class Zealot extends ProtossUnit implements Attackable, Bionic {}
-
-class Dragoon extends ProtossUnit implements Attackable, Mechanic {}
+    class Dragoon extends ProtossUnit implements Attackable, Mechanic {}
+}
 
 @enduml
