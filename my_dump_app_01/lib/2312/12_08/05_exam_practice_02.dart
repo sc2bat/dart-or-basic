@@ -4,9 +4,9 @@ import 'package:simple_logger/simple_logger.dart';
 
 final log = SimpleLogger();
 
-bool isVowel(String str, int num) {
-  final aeiou = ['a', 'e', 'i', 'o', 'u'];
+final aeiou = ['a', 'e', 'i', 'o', 'u'];
 
+bool isVowel(String str, int num) {
   bool vowelResult = false;
 
   for (var a in aeiou) {
@@ -20,8 +20,6 @@ bool isVowel(String str, int num) {
 }
 
 bool isConsonant(String str, int num) {
-  final aeiou = ['a', 'e', 'i', 'o', 'u'];
-
   bool consonantResult = false;
 
   for (var a in aeiou) {
