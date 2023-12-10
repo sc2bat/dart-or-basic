@@ -1,6 +1,6 @@
-import 'package:my_dump_app_01/final/01_origin/character_class.dart';
-import 'package:my_dump_app_01/final/02_job/hero_class.dart';
 import 'package:simple_logger/simple_logger.dart';
+
+import '01_origin/character_class.dart';
 
 final log = SimpleLogger();
 

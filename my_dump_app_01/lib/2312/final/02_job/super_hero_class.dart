@@ -1,5 +1,4 @@
-import 'package:my_dump_app_01/final/02_job/hero_class.dart';
-import 'package:my_dump_app_01/final/04_monster/slime_class.dart';
+import 'package:my_dump_app_01/2312/final/02_job/hero_class.dart';
 
 class SuperHeroClass extends HeroClass {
   SuperHeroClass(

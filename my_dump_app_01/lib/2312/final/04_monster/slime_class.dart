@@ -1,4 +1,4 @@
-import 'package:my_dump_app_01/final/01_origin/monster_class.dart';
+import '../01_origin/monster_class.dart';
 
 class SlimeClass extends MonsterClass {
   SlimeClass(

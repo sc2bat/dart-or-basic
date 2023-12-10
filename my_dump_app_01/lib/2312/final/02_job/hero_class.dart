@@ -1,5 +1,6 @@
-import 'package:my_dump_app_01/final/01_origin/character_class.dart';
-import 'package:my_dump_app_01/final/03_weapon/sword_class.dart';
+import 'package:my_dump_app_01/2312/final/03_weapon/sword_class.dart';
+
+import '../01_origin/character_class.dart';
 
 class HeroClass extends CharacterClass {
   int mp;
