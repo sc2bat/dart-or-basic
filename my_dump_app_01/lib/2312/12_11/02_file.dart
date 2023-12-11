@@ -16,4 +16,7 @@ void main() {
 
   // final text = file.readAsStringSync();
   // log.info(text);
+
+  // flutter 에서는 읽고쓰기가 자유롭게 안되는 듯
+  // dart 에서 별도의 프로그램으로 실행됨을 확인함
 }
