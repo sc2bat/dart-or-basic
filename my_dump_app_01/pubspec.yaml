@@ -33,6 +33,7 @@ dependencies:
   simple_logger: ^1.9.0+3
   http: ^1.1.2
   intl: ^0.19.0
+  csv: ^5.1.1
 
 
   # The following adds the Cupertino Icons font to your application.
