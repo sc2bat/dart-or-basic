@@ -19,5 +19,6 @@ void main() {
   } finally {
     num01 = 0;
   }
+  log.info(num01);
   // Rejecting promise with error: FormatException: 10.5
 }

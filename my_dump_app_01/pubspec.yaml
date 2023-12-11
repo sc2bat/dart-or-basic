@@ -34,6 +34,7 @@ dependencies:
   http: ^1.1.2
   intl: ^0.19.0
   csv: ^5.1.1
+  properties: ^2.1.0
 
 
   # The following adds the Cupertino Icons font to your application.
